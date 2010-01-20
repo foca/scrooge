@@ -4,6 +4,15 @@ module Scrooge
   class Money
     include Comparable
 
+    def self.parse(value)
+      if value.is_a?(String)
+        value.gsub!(/\$/, '')
+        value.gsub!(/,/,  '')
+      end
+
+      value.to_money
+    end
+
     def initialize(cents)
       @cents = cents.to_i
     end

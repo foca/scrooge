@@ -1,9 +1,9 @@
-require "centipede"
+require "scrooge"
 require "spec"
 
-include Centipede
+include Scrooge
 
-describe Centipede::Money do
+describe Money do
   subject { Money.new(175) }
 
   it "can be interpreted as an integer" do
@@ -64,6 +64,20 @@ describe Centipede::Money do
 
     it "can interpet a string as a number of cents" do
       "12345".as_cents.should == Money.new(12345)
+    end
+  end
+
+  describe "parsing money strings" do
+    it "parses decimal points correctly" do
+      Money.parse("15.5").should == 15.5
+    end
+
+    it "ignores dollar signs" do
+      Money.parse("$10").should == 10
+    end
+
+    it "ignores commas" do
+      Money.parse("10,000.00").should == 10_000
     end
   end
 end
