@@ -1,3 +1,5 @@
+require "bigdecimal"
+
 module Scrooge
   VERSION = "0.1.1"
 
@@ -22,7 +24,7 @@ module Scrooge
     end
 
     def to_f
-      to_cents / 100.0
+      BigDecimal(to_cents.to_s) / BigDecimal("100")
     end
 
     def to_money
@@ -91,7 +93,7 @@ end
 
 class String
   def to_money
-    to_f.to_money
+    BigDecimal(self).to_money
   end
 
   def as_cents
