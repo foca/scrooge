@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name    = "scrooge"
-  s.version = "0.1.1"
-  s.date    = "2010-01-20"
+  s.version = "0.1.2"
+  s.date    = "2010-01-28"
 
   s.description = "Class to serialize money into the database, works out of the box with ActiveRecord"
   s.summary     = "Scrooge will keep all your money safe. Or at least in the database."

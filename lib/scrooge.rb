@@ -1,7 +1,7 @@
 require "bigdecimal"
 
 module Scrooge
-  VERSION = "0.1.1"
+  VERSION = "0.1.2"
 
   class Money
     include Comparable
