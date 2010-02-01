@@ -45,6 +45,16 @@ describe Money do
     end
   end
 
+  describe "converting to string" do
+    it "truncates 2 characters after the decimal point" do
+      (0.975).to_money.to_s.should == "0.97"
+    end
+
+    it "expands to two decimal places when there're less" do
+      0.to_money.to_s.should == "0.00"
+    end
+  end
+
   describe "extending core classes" do
     it "allows to convert integers to money objects" do
       2.to_money.should == Money.new(200)

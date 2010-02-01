@@ -76,7 +76,7 @@ module Scrooge
     end
 
     def to_s
-      to_f.to_s
+      sprintf("%.2f", to_f)
     end
   end
 end
