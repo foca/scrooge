@@ -12,6 +12,7 @@ describe Money do
 
   it "can be interpreted as a float" do
     subject.to_f.should == 1.75
+    subject.to_f.class.should == Float
   end
 
   it "can be zero" do

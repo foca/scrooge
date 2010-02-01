@@ -24,7 +24,7 @@ module Scrooge
     end
 
     def to_f
-      BigDecimal(to_cents.to_s) / BigDecimal("100")
+      Float(to_cents.to_s) / 100.0
     end
 
     def to_money
