@@ -6,13 +6,19 @@ include Scrooge
 describe Money do
   subject { Money.new(175) }
 
-  it "can be interpreted as an integer" do
+  it "can be interpreted as an Integer" do
     subject.to_i.should == 1
+    subject.to_i.class.should == Fixnum
   end
 
-  it "can be interpreted as a float" do
+  it "can be interpreted as a Float" do
     subject.to_f.should == 1.75
     subject.to_f.class.should == Float
+  end
+
+  it "can be interpreted as a BigDecimal" do
+    subject.to_d.should == 1.75
+    subject.to_d.class.should == BigDecimal
   end
 
   it "can be zero" do

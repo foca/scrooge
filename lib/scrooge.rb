@@ -20,11 +20,15 @@ module Scrooge
     end
 
     def to_i
-      to_f.to_i
+      to_d.to_i
     end
 
     def to_f
-      Float(to_cents.to_s) / 100.0
+      to_d.to_f
+    end
+
+    def to_d
+      BigDecimal(to_cents.to_s) / BigDecimal("100")
     end
 
     def to_money
@@ -68,15 +72,15 @@ module Scrooge
     end
 
     def method_missing(method, *args, &block)
-      to_f.send(method, *args, &block)
+      to_d.send(method, *args, &block)
     end
 
     def respond_to?(method, include_private=false)
-      to_f.respond_to?(method, include_private)
+      to_d.respond_to?(method, include_private)
     end
 
     def to_s
-      sprintf("%.2f", to_f)
+      sprintf("%.2f", to_d)
     end
   end
 end
