@@ -1,4 +1,6 @@
-**This library is outdated, don't use it! You can just set up your column as :decimal and active record will handle all the serialization into and from BigDecimal for you, and it's supported by rails itself**
+**This library is outdated, don't use it! You can just set up your column as
+:decimal and active record will handle all the serialization into and from 
+BigDecimal for you, and it's supported by rails itself**
 
 Scrooge
 =======
