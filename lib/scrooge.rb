@@ -104,3 +104,7 @@ class String
     to_i.as_cents
   end
 end
+
+if defined?(Rails)
+  require File.join(File.dirname(__FILE__), '..', "rails", "init.rb")
+end
